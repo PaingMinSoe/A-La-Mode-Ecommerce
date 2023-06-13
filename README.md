@@ -23,7 +23,7 @@ php artisan serve
 To use with pre-existing data, you can execute the sql file in MySQL Workbench or phpmyadmin instead of running migrate command.
 https://github.com/PaingMinSoe/A-La-Mode-Ecommerce/blob/main/public/proj.sql
 
-For Admin account, username is admin@example.com and password is just password.
+For Admin account, username is steve.rogers@gmail.com and password is just password.
 For Customer account, username is superman@gmail.com and password is just password.
 
 ## Screenshots
