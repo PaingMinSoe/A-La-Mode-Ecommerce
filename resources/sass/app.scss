@@ -1,0 +1,17 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Nav Pills
+$nav-link-color: #000;
+$nav-pills-link-active-color: #fff;
+$nav-pills-link-active-bg: #000;
+
+// Paginator
+$pagination-color: #000;
+$pagination-active-bg: #000;
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
