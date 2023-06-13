@@ -20,8 +20,16 @@ Use following command to run the project in browser.
 php artisan serve
 ```
 
+Then run the following command to migrate the data into the database and start fresh. 
+
+```console 
+php artisan migrate:fresh --seed
+```
+
+To use with pre-existing data, you can execute the sql file in MySQL Workbench or phpmyadmin. 
+
 For Admin account, username is admin@example.com and password is just password.
-Customer account can be created freely.
+For Customer account, username is user@example.com and password is just password.
 
 ## Screenshots
 
