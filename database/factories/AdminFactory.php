@@ -16,7 +16,7 @@ class AdminFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'email' => 'admin@example.com',
+            'email' => 'steve.rogers@gmail.com',
 //            'email_verified_at' => now(),
             'address' => $this->faker->address(),
             'nrc_number' => '12/LaMaTa(N)' . $this->faker->numerify('######'),
