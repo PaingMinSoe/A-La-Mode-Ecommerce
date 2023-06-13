@@ -23,7 +23,7 @@ php artisan serve
 Then run the following command to migrate the data into the database. 
 
 ```console 
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
 For Admin account, username is admin@example.com and password is just password.
