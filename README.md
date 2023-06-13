@@ -26,7 +26,8 @@ Then run the following command to migrate the data into the database and start f
 php artisan migrate:fresh --seed
 ```
 
-To use with pre-existing data, you can execute the sql file in MySQL Workbench or phpmyadmin. 
+To use with pre-existing data, you can execute the sql file in MySQL Workbench or phpmyadmin.
+https://github.com/PaingMinSoe/A-La-Mode-Ecommerce/blob/main/public/proj.sql
 
 For Admin account, username is admin@example.com and password is just password.
 For Customer account, username is user@example.com and password is just password.
