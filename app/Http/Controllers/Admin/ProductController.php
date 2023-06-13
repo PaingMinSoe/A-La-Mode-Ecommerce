@@ -5,16 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Category;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
+use App\Models\PurchaseDetail;
 use Illuminate\Routing\Redirector;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Contracts\Foundation\Application;
 
 class ProductController extends Controller
 {
@@ -203,7 +205,17 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): RedirectResponse
     {
+        $order_exists = OrderDetail::where('product_id', $product->id)->exists();
+        $purchase_exists = PurchaseDetail::where('product_id', $product->id)->exists();
+        if ($order_exists || $purchase_exists) {
+            return back()
+                    ->with('message', 'Product has related data in purchases or orders hence can\'t delete.')
+                    ->with('class', 'danger');
+        }
+
         $product->delete();
+
+
 
         return back()
             ->with('message', 'Product Successfully Deleted!')

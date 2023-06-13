@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Purchase;
 use App\Models\Supplier;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 
 class SupplierController extends Controller
 {
@@ -106,6 +107,11 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier): RedirectResponse
     {
+        if (Purchase::where('supplier_id', $supplier->id)->exists()) {
+            return back()
+                    ->with('message', 'Supplier has related data in purchases hence can\'t be deleted.')
+                    ->with('class', 'danger');
+        }
         $supplier->delete();
         return back()->with('message', 'Supplier Successfully Deleted!')->with('class', 'success');
     }

@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\Category;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 
 class CategoryController extends Controller
 {
@@ -85,8 +86,14 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category): RedirectResponse
     {
+        if (Product::where('category_id', $category->id)->exists()) {
+            return back()
+                    ->with('message', 'Category has related data in products hence can\'t be deleted.')
+                    ->with('class', 'danger');
+        }
+
         $category->delete();
-        return back()->with('message', 'Brand Successfully Deleted!')
+        return back()->with('message', 'Category Successfully Deleted!')
             ->with('class', 'success');
     }
 }

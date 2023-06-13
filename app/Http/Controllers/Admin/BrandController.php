@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Brand;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\Foundation\Application;
 
 class BrandController extends Controller
 {
@@ -90,7 +91,13 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand): RedirectResponse
     {
+        if (Product::where('brand_id', $brand->id)->exists()) {
+            return back()
+                    ->with('message', 'Brand has related data in products hence can\'t be deleted.')
+                    ->with('class', 'danger');
+        }
         $brand->delete();
+
         return back()->with('message', 'Brand Successfully Deleted!')
             ->with('class', 'success');
     }
