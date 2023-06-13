@@ -20,8 +20,14 @@ Use following command to run the project in browser.
 php artisan serve
 ```
 
+Then run the following command to migrate the data into the database. 
+
+```console 
+php artisan migrate --seed
+```
+
 For Admin account, username is admin@example.com and password is just password.
-Customer account can be created freely.
+For Customer account, username is user@example.com and password is just password.
 
 ## Screenshots
 
