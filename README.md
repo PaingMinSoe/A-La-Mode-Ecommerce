@@ -1,63 +1,43 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="public/img/alamode_general.png" width="200"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## A La Mode
 
-## About Laravel
+An E-commerce website platform built using Laravel Framework. Feature for Admin such as CRUD functions for products, and chart display are included. Customers have features such as shopping cart, wishlist and checkout with stripe payment gateway implemented.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Setting up
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Firstly create a database named 'proj' in MySQL server. Or .env file in the project can be edited to the database name required for the project.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Run the following command in terminal to create tables in the designated database.
 
-## Learning Laravel
+```console
+php artisan migrate
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Use following command to run the project in browser.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```console
+php artisan serve
+```
 
-## Laravel Sponsors
+For Admin account, username is admin@example.com and password is just password.
+Customer account can be created freely.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Screenshots
 
-### Premium Partners
+![Login Panel](https://user-images.githubusercontent.com/61079619/236727572-db904c88-b030-4017-b447-da482766740a.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![Admin Dashboard](https://user-images.githubusercontent.com/61079619/236727938-cb19b201-d785-417f-8c9c-c16d43014eaf.png)
 
-## Contributing
+![Order Manage](https://user-images.githubusercontent.com/61079619/236728020-27748cf0-6020-4ca1-9595-010ebbd37af9.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![Landing Page](https://user-images.githubusercontent.com/61079619/236727227-6e5e63d6-5223-4348-8250-2cc1107eca71.png)
 
-## Code of Conduct
+![Products](https://user-images.githubusercontent.com/61079619/236728169-d8ec358b-027c-4623-a0f8-ff28eddc81a4.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![Product Detail](https://user-images.githubusercontent.com/61079619/236728329-94f5dcbf-64e7-44e2-8977-9feabe89a78d.png)
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![Shopping Cart](https://user-images.githubusercontent.com/61079619/236728243-a7db87a5-0bfc-4704-a155-b7b521c9a747.png)
 
 ## License
 
