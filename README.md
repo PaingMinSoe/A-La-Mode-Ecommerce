@@ -8,6 +8,12 @@ An E-commerce website platform built using Laravel Framework. Feature for Admin 
 
 Firstly create a database named 'proj' in MySQL server. Or .env file in the project can be edited to the database name required for the project.
 
+Then install the necessary packages using the following commands.
+```console
+composer install
+npm install
+```
+
 Run the following command in terminal to create tables in the designated database.
 
 ```console
