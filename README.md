@@ -12,6 +12,7 @@ Then install the necessary packages using the following commands.
 ```console
 composer install
 npm install
+php artisan key:generate
 ```
 
 Run the following command in terminal to create tables in the designated database.
